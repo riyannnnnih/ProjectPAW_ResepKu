@@ -1,7 +1,7 @@
 <?php
 // readresep.php
 
-require_once 'connection.php';
+require_once '../connection.php';
 
 // Periksa apakah ID resep telah diberikan
 if (isset($_GET['id'])) {
