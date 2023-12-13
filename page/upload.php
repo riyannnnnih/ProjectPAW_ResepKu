@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
       $uniqImageName = uniqid();
       $uniqImageName = $uniqImageName . '.' . $imageExtension;
 
-      move_uploaded_file($tmpName, 'images/' . $uniqImageName);
+      move_uploaded_file($tmpName, '../images/' . $uniqImageName);
       $query = "INSERT INTO resep VALUES ('', '$judul', '$bahan', '$langkah', CURRENT_TIMESTAMP(), '01', '$uniqImageName')";
       mysqli_query($db, $query);
       echo "<script> alert('Berhasil Menambahkan');

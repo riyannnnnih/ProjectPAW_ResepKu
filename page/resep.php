@@ -15,7 +15,7 @@
     while ($row = $result->fetch_object()) {
       // Tambahkan hyperlink dengan URL dinamis yang membawa ID resep ke readresep.php
       echo "<a href='readresep.php?id=$row->Id_resep'>";
-      echo "<img src='images/$row->image' width='200'>";
+      echo "<img src='../images/$row->image' width='200'>";
       echo "<h1>$row->Judul</h1>";
       echo "</a>";
     }

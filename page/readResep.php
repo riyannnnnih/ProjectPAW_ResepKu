@@ -15,7 +15,7 @@ if (isset($_GET['id'])) {
     $row = $result->fetch_object();
     // Tampilkan detail resep
     echo "<h1>$row->Judul</h1>";
-    echo "<img src='images/$row->image' width='200'>";
+    echo "<img src='../images/$row->image' width='200'>";
     echo "<h3>Bahan:</h3>";
     echo "<p>$row->Bahan</p>";
     echo "<h3>Langkah:</h3>";
