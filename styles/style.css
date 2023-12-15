@@ -29,6 +29,7 @@ label {
   flex-direction: column;
   margin: 0;
   margin-top: 40px;
+  height: fit-content;
 }
 
 #fileUpload {
@@ -36,13 +37,16 @@ label {
 }
 
 .img-container {
-  background-color: aqua;
+  background-color: rgb(221, 112, 84);
   width: 100%;
   align-items: center;
   display: flex;
   flex-direction: column;
   border-radius: 20px;
   height: 20vh;
+  color: white;
+  height: fit-content;
+  box-sizing: border-box;
 }
 
 #formUpload {
@@ -50,20 +54,77 @@ label {
   margin-top: 15px;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .container-2 {
   display: flex;
   justify-content: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   width: 80%;
   background-color: antiquewhite;
   margin-top: 20px;
   border-radius: 20px;
-  height: 100vh;
+  height: fit-content;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
 }
 
-.langkah-wrapper {
-  align-items: start;
+.inputForm {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: start;
+  padding: 30px;
+  padding-bottom: 0px;
+  width: 90%;
+}
+
+.inputResep {
+  margin-bottom: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  border: none;
+  padding: 8px;
+  width: 100%;
+  max-width: 100%;
+  min-height: 10vh;
+  background-color: transparent;
+  display: flex;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: large;
+}
+
+#langkahResep {
+  background-color: whitesmoke !important;
+  font-family: 'Roboto', sans-serif;
+  height: max-content;
+  resize: none;
+  height: 30vh;
+  font-weight: lighter;
+  font-size: medium;
+}
+
+#submitResep {
+  border-radius: 5px;
+  color: white;
+  height: 40px;
+  max-width: 40%;
+  width: 30%;
+  border: none;
+  cursor: pointer;
+  background-color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
 }
