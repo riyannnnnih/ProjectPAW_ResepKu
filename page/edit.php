@@ -30,7 +30,7 @@ $jumlahBarisLangkah = substr_count($langkah, "\n") + 1;
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <link rel="stylesheet" href="../styles/edit.css" />
-    <link rel="stylesheet" href="../styles/drag.css" />
+    <link rel="stylesheet" href="../styles/drage.css" />
 
 </head>
 
