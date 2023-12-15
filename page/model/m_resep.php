@@ -28,7 +28,7 @@ class ModelResep
 
   public function getResepById($id_resep)
   {
-    $result = $this->db->query("SELECT * FROM RESEP WHERE Id_resep = $id_resep");
+    $result = $this->db->query("SELECT * FROM RESEP R, PENGGUNA P WHERE R.Id_resep = $id_resep AND R.Id_pengguna = P.Id_pengguna");
 
     if ($result->num_rows > 0) {
       return $result->fetch_object();
@@ -47,7 +47,7 @@ class ModelResep
 
   public function selectResepWithPagination($limit, $offset)
   {
-    $query = "SELECT * FROM RESEP  GROUP BY Id_resep LIMIT $limit OFFSET $offset";
+    $query = "SELECT * FROM RESEP R, PENGGUNA P WHERE R.Id_pengguna = P.Id_pengguna  GROUP BY Id_resep LIMIT $limit OFFSET $offset";
     $result = $this->db->query($query);
 
     $resepList = [];

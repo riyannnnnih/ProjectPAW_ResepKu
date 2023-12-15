@@ -10,12 +10,22 @@
 </head>
 
 <body>
+  <div id="upload-menu">
+    <a href="v_resepUpload.php" id="ref-upload">
+      <div id="upload-img">
+        <img src="../../asset/add-512.png">
+        Buat resep kamu sekarang!
+      </div>
+    </a>
+  </div>
+  <p id="judul">Daftar Resep</p>
   <div class="resep-card">
     <?php foreach ($resepList as $resep) : ?>
       <!-- Tambahkan hyperlink dengan URL dinamis yang membawa ID resep ke readresep.php -->
       <a href="../controller/c_readResep.php?id=<?php echo $resep->Id_resep; ?>">
         <img src='../../images/<?php echo $resep->image; ?>' width='200'>
         <h1><?php echo $resep->Judul; ?></h1>
+        <h3>Oleh <?php echo $resep->Username ?></h3>
       </a>
     <?php endforeach; ?>
   </div>

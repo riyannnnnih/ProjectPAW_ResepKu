@@ -16,6 +16,7 @@
     <?php if ($resep) : ?>
       <h1><?php echo $resep->Judul; ?></h1>
       <img src='../../images/<?php echo $resep->image; ?>' width='200'>
+      <p>Oleh <?php echo $resep->Username ?></p>
       <h3>Bahan:</h3>
       <p><?php echo $resep->Bahan; ?></p>
       <h3>Langkah:</h3>
