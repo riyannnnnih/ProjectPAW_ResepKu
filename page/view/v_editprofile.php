@@ -10,6 +10,17 @@ include '../model/m_editprofile.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Prodile</title>
     <link rel="stylesheet" href="../../styles/editprofile.css">
+    <script>
+      function confirmEdit() {
+         var result = confirm("Are you sure you want to edit?");
+         if (result) {
+            document.getElementById('confirm').value = "edit";
+            document.getElementById('updateProfileForm').submit();
+         } else {
+            window.location.href = 'v_editprofile.php';
+         }
+      }
+   </script>
 </head>
 <body>
     <div class="update-profile">
@@ -17,7 +28,7 @@ include '../model/m_editprofile.php';
             $userEditProfile = new EditProfileModel($db);
             $user = $userEditProfile->getUserById($user_id);
         ?>
-      <!-- ... (form content) -->
+
     <form action="" method="post" enctype="multipart/form-data">
         <?php
             if($fetch['image'] == ''){

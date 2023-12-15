@@ -22,7 +22,6 @@ class EditProfileModel {
 
         mysqli_query($this->db, "UPDATE `pengguna` SET name = '$update_name', email = '$update_email' WHERE id_pengguna = '$user_id'") or die('query failed');
 
-        // ... (similar updates for password and image)
         $old_pass = $_POST['old_pass'];
         $update_pass = mysqli_real_escape_string($db, md5($_POST['update_pass']));
         $new_pass = mysqli_real_escape_string($db, md5($_POST['new_pass']));

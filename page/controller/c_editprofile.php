@@ -23,5 +23,4 @@ if(isset($_POST['update_profile'])){
     $userEditProfile->updateProfile($user_id, $updateData);
 }
 
-// ... (additional logic, if needed)
 ?>
