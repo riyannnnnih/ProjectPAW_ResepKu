@@ -25,7 +25,7 @@
       <a href="../controller/c_readResep.php?id=<?php echo $resep->Id_resep; ?>">
         <img src='../../images/<?php echo $resep->image; ?>' width='200'>
         <h1><?php echo $resep->Judul; ?></h1>
-        <h3>Oleh <?php echo $resep->Username ?></h3>
+        <p>Oleh <?php echo $resep->Username ?></p>
       </a>
     <?php endforeach; ?>
   </div>

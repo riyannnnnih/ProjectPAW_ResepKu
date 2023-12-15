@@ -12,12 +12,13 @@
 </head>
 
 <body>
-  <nav>
 
-  </nav>
+  <a id="back" href="/ProjectPaw/ProjectPAW_ResepKu/page/view/v_resepList.php">
+    <img src="../../asset/arrow-back.svg">
+  </a>
   <div class="container-1">
     <div>
-      <h1>Upload Resep</h1>
+      <h1 id="upload-title">Upload Resep</h1>
     </div>
     <div class="container-2">
       <div class="img-container">

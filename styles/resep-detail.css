@@ -55,3 +55,9 @@ body {
   padding: 8px;
   border-radius: 10px;
 }
+
+#time {
+  font-size: small;
+  font-weight: lighter;
+  margin-top: -10px;
+}
