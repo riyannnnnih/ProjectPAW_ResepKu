@@ -114,6 +114,8 @@ ALTER TABLE `resep`
 ALTER TABLE `resep`
   MODIFY `Id_resep` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
+ALTER TABLE `pengguna`
+  MODIFY `Id_pengguna` int (15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Constraints for dumped tables
 --
