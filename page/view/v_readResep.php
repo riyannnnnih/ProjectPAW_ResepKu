@@ -9,16 +9,23 @@
 </head>
 
 <body>
-  <?php if ($resep) : ?>
-    <h1><?php echo $resep->Judul; ?></h1>
-    <img src='../../images/<?php echo $resep->image; ?>' width='200'>
-    <h3>Bahan:</h3>
-    <p><?php echo $resep->Bahan; ?></p>
-    <h3>Langkah:</h3>
-    <p><?php echo nl2br($resep->Langkah); ?></p>
-  <?php else : ?>
-    <p>Resep tidak ditemukan.</p>
-  <?php endif; ?>
+  <a id="back" href="/ProjectPaw/ProjectPAW_ResepKu/page/view/v_resepList.php">
+    <img src="../../asset/arrow-back.svg">
+  </a>
+  <div class="resep-container">
+    <?php if ($resep) : ?>
+      <h1><?php echo $resep->Judul; ?></h1>
+      <img src='../../images/<?php echo $resep->image; ?>' width='200'>
+      <h3>Bahan:</h3>
+      <p><?php echo $resep->Bahan; ?></p>
+      <h3>Langkah:</h3>
+      <div id="langkah">
+        <p><?php echo nl2br($resep->Langkah); ?></p>
+      </div>
+    <?php else : ?>
+      <p>Resep tidak ditemukan.</p>
+    <?php endif; ?>
+  </div>
 </body>
 
 </html>

@@ -1,5 +1,4 @@
-<?php include_once '../controller/c_resepList.php'; ?>
-
+<?php require_once "../controller/c_resepList.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,6 +18,13 @@
         <h1><?php echo $resep->Judul; ?></h1>
       </a>
     <?php endforeach; ?>
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
+      <a href="?page=<?php echo $i; ?>" <?php if ($i == $currentpage) echo 'class="active"'; ?>><?php echo "| " . $i . " |"; ?></a>
+    <?php endfor; ?>
   </div>
 </body>
 

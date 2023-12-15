@@ -36,5 +36,26 @@ class ModelResep
       return false;
     }
   }
+
+  public function countAllResep()
+  {
+    $query = "SELECT COUNT(*) as total FROM RESEP";
+    $result = $this->db->query($query);
+    $row = $result->fetch_assoc();
+    return $row['total'];
+  }
+
+  public function selectResepWithPagination($limit, $offset)
+  {
+    $query = "SELECT * FROM RESEP  GROUP BY Id_resep LIMIT $limit OFFSET $offset";
+    $result = $this->db->query($query);
+
+    $resepList = [];
+    while ($row = $result->fetch_object()) {
+      $resepList[] = $row;
+    }
+
+    return $resepList;
+  }
   // Additional methods for fetching multiple users, searching, etc. can be added as needed
 }
