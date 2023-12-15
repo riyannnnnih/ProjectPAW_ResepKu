@@ -81,7 +81,7 @@ $jumlahBarisLangkah = substr_count($langkah, "\n") + 1;
     </section>
     <!-- aos script -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="../js/edit.js"></script>
+    <script src="../script/edit.js"></script>
 
 </body>
 
