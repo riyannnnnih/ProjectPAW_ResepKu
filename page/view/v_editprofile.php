@@ -70,7 +70,7 @@ include '../model/m_editprofile.php';
             </div>
         </div>
         <input type="submit" value="update profile" name="update_profile" class="btn">
-        <a href="" class="delete-btn">back</a>
+        <a href="v_profilPublik.php" class="delete-btn">back</a>
    </form>
    </div>
     
