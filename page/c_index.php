@@ -25,4 +25,23 @@ class index
         $resep = $this->model->fetchRandomResep();
         include "./v_index.php";
     }
+
+    public function upload($new_file_path, $file) {
+        if (isset($file['tmp_name']) && $file['tmp_name'] != '') {
+            $image = getimagesize($file['tmp_name']);
+            if (!$image) {
+                return false;
+            }
+        } else {
+            return false;
+        }
+
+        $upload_path = $new_file_path . basename($file['name']);
+
+        if (rename($file['tmp_name'], $upload_path)) {
+            return $upload_path;
+        } else {
+            return false;
+        }
+    }
 }
