@@ -1,5 +1,5 @@
 <?php
-include_once "./controller/c_index.php";
+include_once "./c_index.php";
 
 $controller = new index();
 

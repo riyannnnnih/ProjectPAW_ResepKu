@@ -206,7 +206,7 @@
   <!-- aos script -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <!-- custom script -->
-  <script src="../styles/main.js"></script>
+  <script src="../../script/main.js"></script>
   <script>
     /* When the user clicks on the button,
     toggle between hiding and showing the dropdown content */
