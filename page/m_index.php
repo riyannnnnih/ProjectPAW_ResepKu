@@ -26,7 +26,7 @@ class m_index{
     }
 
     public function login($email, $password){
-        require "../../connection.php";
+        require "../connection.php";
         $result = $db->query("SELECT * FROM pengguna WHERE Email = '$email'");
 
         if ($result->num_rows == 1) {
