@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "../../connection.php";
+include_once "../connection.php";
 
 class m_index{
 
@@ -9,7 +9,7 @@ class m_index{
     }
 
     public function fetchRandomResep(){
-        require "../../connection.php";
+        require "../connection.php";
         $resep = array();
 
         $result = $db->query("SELECT * FROM resep ORDER BY RAND() LIMIT 3");
@@ -48,7 +48,7 @@ class m_index{
     }
 
     public function reg($username, $email, $foto, $password){
-        require "../../connection.php";
+        require "../connection.php";
         $row = array();
 
         $result = $db->query("SELECT * FROM pengguna");

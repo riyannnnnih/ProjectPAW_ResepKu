@@ -1,5 +1,5 @@
 <?php
-include_once '../model/m_index.php';
+include_once './m_index.php';
 
 class index
 {
@@ -23,6 +23,6 @@ class index
     public function invoke()
     {
         $resep = $this->model->fetchRandomResep();
-        include "../view/v_index.php";
+        include "./v_index.php";
     }
 }
