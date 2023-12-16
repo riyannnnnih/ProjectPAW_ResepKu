@@ -1,6 +1,8 @@
 <?php require_once "../controller/c_showFavo.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
+<!-- ARYA YUDHA KUSUMA PRANATA -->
+<!-- 225150701111015 -->
 
 <head>
   <meta charset="UTF-8">
@@ -76,6 +78,89 @@
       <a href="?page=<?php echo $i; ?>" <?php if ($i == $currentpage) echo 'class="active"'; ?>><?php echo "| " . $i . " |"; ?></a>
     <?php endfor; ?>
   </div>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer__wrapper">
+        <div class="footer__col1">
+          <div class="footer__logo">
+            <h1 style="font-size: 3rem;">ResepKu</h1>
+          </div>
+          <p class="footer__desc">
+            ResepKu adalah sebuah website yang kami buat untuk menyelesaikan tugas akhir mata kuliah Pemrograman Aplikasi Web. Website ini berisi resep-resep makanan dan minuman yang dapat Anda coba di rumah.
+          </p>
+        </div>
+        <div class="footer__col2">
+          <h3 class="footer__text__title">
+            Links
+          </h3>
+          <ol class="footer__text">
+            <li>
+              <a href="index.php">Home</a>
+            </li>
+            <li>
+              <a href="./resep.php">Resep</a>
+            </li>
+            <li>
+              <a href="./favorit.php">Favorit</a>
+            </li>
+          </ol>
+        </div>
+        <div class="footer__col3">
+          <h3 class="footer__text__title">
+            Anggota
+          </h3>
+          <ol class="footer__text">
+            <li>
+              <a href="#">Arya Yudha Kusuma P</a>
+            </li>
+            <li>
+              <a href="#">Meisha Putradewan</a>
+            </li>
+            <li>
+              <a href="#">Muhammad Andra Dzaki</a>
+            </li>
+            <li>
+              <a href="#">Fauzi Mahardika K</a>
+            </li>
+            <li>
+              <a href="#">Urdha Egha Kirana</a>
+            </li>
+          </ol>
+        </div>
+        <div class="footer__col4">
+          <h3 class="footer__text__title">
+            NIM
+          </h3>
+          <ol class="footer__text">
+            <li>
+              <a href="#">225150701111015</a>
+            </li>
+            <li>
+              <a href="#">225150700111024</a>
+            </li>
+            <li>
+              <a href="#">225150701111003</a>
+            </li>
+            <li>
+              <a href="#">225150707111071</a>
+            </li>
+            <li>
+              <a href="#">225150701111007</a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div id="copyright">
+    <div class="container">
+      <p class="copyright__text">
+        © Kelompok 3 Pemrograman Aplikasi Web TI-C 2023
+      </p>
+    </div>
+  </div>
+  <!-- End Footer -->
 </body>
 
 </html>
