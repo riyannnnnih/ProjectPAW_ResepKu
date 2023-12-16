@@ -3,12 +3,14 @@ include '../../connection.php';
 include '../model/m_editprofile.php';
 
 session_start();
-$user_id = $_SESSION['user_id'];
 
-if(isset($_POST['update_profile'])){
+$id_pengguna = $_SESSION['id_pengguna'];
+
+
+if (isset($_POST['update_profile'])) {
     $userEditProfile = new EditProfileModel($db);
-
-    // Retrieve user data from the form
+    
+    
     $updateData = [
         'update_name' => $_POST['update_name'],
         'update_email' => $_POST['update_email'],
@@ -19,8 +21,10 @@ if(isset($_POST['update_profile'])){
         'update_image' => $_FILES['update_image']
     ];
 
-    // Update the user profile
-    $userEditProfile->updateProfile($user_id, $updateData);
-}
+    $userEditProfile->updateProfile($id_pengguna, $updateData);
 
+    $updatedUser = $userEditProfile->getUserById($id_pengguna);
+
+    include '../view/v_editprofile.php';
+}
 ?>
