@@ -7,13 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
   <title>ResepKu</title>
-  <link rel="stylesheet" href="../styles/reset.css">
-  <link rel="stylesheet" href="../styles/globalStyles.css">
-  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="../../styles/reset.css">
+  <link rel="stylesheet" href="../../styles/globalStyles.css">
+  <link rel="stylesheet" href="../../styles/components.css">
   <!-- aos library css  -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <!-- Add your custom css -->
-  <link rel="stylesheet" href="../styles/home.css">
+  <link rel="stylesheet" href="../../styles/home.css">
 </head>
 
 <body>
@@ -21,7 +21,7 @@
   <div class="nav">
     <div class="container">
       <div class="nav__wrapper">
-        <a href="index.php" class="logo">
+        <a href="../index.php" class="logo">
           <h1>ResepKu</h1>
         </a>
         <nav>
@@ -41,7 +41,7 @@
               </svg>
             </div>
             <div class="nav__list__wrapper">
-              <li><a class="nav__link" href="index.php">Home</a></li>
+              <li><a class="nav__link" href="../index.php">Home</a></li>
               <li><a class="nav__link" href="resep.php">Resep</a></li>
               <li><a class="nav__link" href="favorit.php">Favorit</a></li>
               <?php if (isset($_SESSION['id_pengguna'])) {
@@ -49,11 +49,11 @@
                 <a href='#' onclick='myFunction()' class='dropbtn'>More</a>
                 <div id='myDropdown' class='dropdown-content'>
                   <a href='#'>Upload Resep</a>
-                  <a href='logout.php'>Log Out</a>
+                  <a href='../logout.php'>Log Out</a>
                 </div>
               </li>";
               } else {
-                echo "<li><a href='login.php' class='btn primary-btn'>Login</a></li>";
+                echo "<li><a href='./v_login.php' class='btn primary-btn'>Login</a></li>";
               } ?>
             </div>
           </ul>
@@ -68,11 +68,9 @@
       <div class="hero__wrapper">
         <div class="hero__left" data-aos="fade-left">
           <div class="hero__left__wrapper">
-            <h1 class="hero__heading">The flavor of tradition</h1>
+            <h1 class="hero__heading">ResepKu</h1>
             <p class="hero__info">
-              We are a multi-cuisine restaurant offering a wide variety of food experience in both casual and fine
-              dining
-              environment.
+            ResepKu adalah sebuah website yang kami buat untuk menyelesaikan tugas akhir mata kuliah Pemrograman Aplikasi Web. Website ini berisi resep-resep makanan dan minuman yang dapat Anda coba di rumah.
             </p>
             <div class="button__wrapper">
               <a href="./resep.php" class="btn primary-btn">Explore Resep</a>
@@ -80,7 +78,7 @@
               if (isset($_SESSION['id_pengguna'])) {
                 echo "<a href='./upload.php' class='btn'>Upload Resep</a>";
               } else {
-                echo "<a href='./login.php' class='btn'>Upload Resep</a>";
+                echo "<a href='./v_login.php' class='btn'>Upload Resep</a>";
               }
               ?>
             </div>
@@ -88,7 +86,7 @@
         </div>
         <div class="hero__right" data-aos="fade-right">
           <div class="hero__imgWrapper">
-            <img src="../images/heroImg.png">
+            <img src="../../images/heroImg.png">
           </div>
         </div>
       </div>
@@ -103,14 +101,15 @@
     echo "<h2 class='dishGrid__title'>";
     echo "Resep-resep yang Mungkin Anda Sukai";
     echo "</h2>";
-    echo "<div class='dishGrid__wrapper'>";
+    echo "<div style='max-width: 350px; max-height: 350px;' class='dishGrid__wrapper'>";
     foreach ($resep as $item) {
       echo '<div class="dishGrid__item">';
       echo '<div class="dishGrid__item__img">';
-      echo '<img src="../images/' . $item['image'] . '" alt="food img">';
+      echo '<img src="../../images/' . $item['image'] . '" alt="food img">';
       echo '</div>';
       echo '<div class="dishGrid__item__info">';
       echo '<h3 class="dishGrid__item__title">' . $item['Judul'] . '</h3>';
+      echo '<p class="dishGrid__item__desc">' . $item['Bahan'] . '</p>';
       echo '</div>';
       echo '</div>';
     }
@@ -126,10 +125,10 @@
       <div class="footer__wrapper">
         <div class="footer__col1">
           <div class="footer__logo">
-            <img src="./images/logo.svg" alt="shaif's cuisine">
+            <h1 style="font-size: 3rem;">ResepKu</h1>
           </div>
           <p class="footer__desc">
-            Fresh and delicious traditional Bangladeshi food to delight the whole family.
+            ResepKu adalah sebuah website yang kami buat untuk menyelesaikan tugas akhir mata kuliah Pemrograman Aplikasi Web. Website ini berisi resep-resep makanan dan minuman yang dapat Anda coba di rumah.
           </p>
         </div>
         <div class="footer__col2">
@@ -138,42 +137,57 @@
           </h3>
           <ol class="footer__text">
             <li>
-              <a href="/index.php">Home</a>
+              <a href="../index.php">Home</a>
             </li>
             <li>
               <a href="./resep.php">Resep</a>
+            </li>
+            <li>
+              <a href="./favorit.php">Favorit</a>
             </li>
           </ol>
         </div>
         <div class="footer__col3">
           <h3 class="footer__text__title">
-            Support
+            Anggota
           </h3>
           <ol class="footer__text">
             <li>
-              <a href="#">Contact</a>
+              <a href="#">Arya Yudha Kusuma P</a>
             </li>
             <li>
-              <a href="#">Support Center</a>
+              <a href="#">Meisha Putradewan</a>
             </li>
             <li>
-              <a href="#">Feedback</a>
+              <a href="#">Muhammad Andra Dzaki</a>
+            </li>
+            <li>
+              <a href="#">Fauzi Mahardika K</a>
+            </li>
+            <li>
+              <a href="#">Urdha Egha Kirana</a>
             </li>
           </ol>
         </div>
         <div class="footer__col4">
           <h3 class="footer__text__title">
-            Contact
+            NIM
           </h3>
           <ol class="footer__text">
             <li>
-              <a href="#">+880123</a>
+              <a href="#">225150701111015</a>
             </li>
             <li>
-              <a href="#">webcifar@gmail.com</a>
+              <a href="#">225150700111024</a>
             </li>
             <li>
-              <a href="#">GEC Circle, Chittagong, Bangladesh</a>
+              <a href="#">225150701111003</a>
+            </li>
+            <li>
+              <a href="#">225150707111071</a>
+            </li>
+            <li>
+              <a href="#">225150701111007</a>
             </li>
           </ol>
         </div>
@@ -183,7 +197,7 @@
   <div id="copyright">
     <div class="container">
       <p class="copyright__text">
-        © copyright 2021 Shaif’s Cuisine | All rights reserved
+        © Kelompok 3 Pemrograman Aplikasi Web TI-C 2023
       </p>
     </div>
   </div>

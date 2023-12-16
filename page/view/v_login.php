@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,9 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
   <title>Sign In</title>
-  <link rel="stylesheet" href="../styles/reset.css">
-  <link rel="stylesheet" href="../styles/globalStyles.css">
-  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="../../styles/reset.css">
+  <link rel="stylesheet" href="../../styles/globalStyles.css">
+  <link rel="stylesheet" href="../../styles/components.css">
   <!-- aos library css  -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
@@ -19,7 +20,7 @@
   <div class="nav">
     <div class="container">
       <div class="nav__wrapper">
-        <a href="./index.php" class="logo">
+        <a href="../index.php" class="logo">
           <h1>ResepKu</h1>
         </a>
         <nav>
@@ -47,11 +48,11 @@
                 <a href='#' onclick='myFunction()' class='dropbtn'>More</a>
                 <div id='myDropdown' class='dropdown-content'>
                   <a href='#'>Upload Resep</a>
-                  <a href='logout.php'>Log Out</a>
+                  <a href='../logout.php'>Log Out</a>
                 </div>
               </li>";
               } else {
-                echo "<li><a href='./login.php' class='btn primary-btn'>Login</a></li>";
+                echo "<li><a href='./v_login.php' class='btn primary-btn'>Login</a></li>";
               } ?>
             </div>
           </ol>
@@ -60,42 +61,21 @@
     </div>
   </div>
   <!-- End Nav Section -->
-  <!-- Booking Section -->
+  <!-- Sign In Section -->
   <section id="form" data-aos="fade-up">
     <div class="container">
-      <h3 class="form__title">Sign Up</h3>
+      <h3 class="form__title">Sign In</h3>
       <div class="form_login">
-        <form action="reg.php" method="post" enctype="multipart/form-data">
-          <div class="form__group form__group__full">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" placeholder="Enter your username" required>
-          </div>
+        <form action="../index.php" method="post">
           <div class="form__group form__group__full">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="Enter your email" required>
-          </div>
-          <div class="form__group form__group__full">
-            <label for="foto">Profile Picture</label>
-            <input class="btn primary-btn" type="file" name="foto" id="foto" placeholder="Upload your profile picture">
+            <input type="email" name="loginEmail" id="email" placeholder="Enter your email" required>
           </div>
           <div class="form__group form__group__full">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" placeholder="Enter your password" required>
+            <input type="password" name="loginPassword" id="password" placeholder="Enter your password" required>
           </div>
-          <?php
-          if (isset($_SESSION['error_password'])) {
-            if ($_SESSION['error_password']) {
-              echo "<h1>Password sudah terdaftar</h1>";
-              session_destroy();
-            } else if ($_SESSION['error_email']) {
-              echo "<h1>Email telah terdaftar</h1>";
-              session_destroy();
-            } else if ($_SESSION['error_username']) {
-              echo "<h1>Username sudah terdaftar</h1>";
-              session_destroy();
-            }
-          } ?>
-          <button type="submit" class="btn primary-btn">Sign Up</button>
+          <button type="submit" class="btn primary-btn">Sign In</button>
           <?php
           if (isset($_SESSION['error_pass'])) {
             if ($_SESSION['error_pass']) {
@@ -106,51 +86,23 @@
               session_destroy();
             }
           } ?>
-          <p style="margin-top: .5rem;">Sudah punya akun? <a href="login.php">Sign In</a></p>
+          <p style="margin-top: .5rem;">Belum punya akun? <a href="./v_reg.php">Sign Up</a></p>
         </form>
       </div>
     </div>
   </section>
-  <!-- End Booking Section -->
+  <!-- End Sign In Section -->
   <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer__wrapper">
         <div class="footer__col1">
           <div class="footer__logo">
-            <img src="./images/logo.svg" alt="shaif's cuisine">
+            <h1 style="font-size: 3rem;">ResepKu</h1>
           </div>
           <p class="footer__desc">
-            Fresh and delicious traditional Bangladeshi food to delight the whole family.
+            ResepKu adalah sebuah website yang kami buat untuk menyelesaikan tugas akhir mata kuliah Pemrograman Aplikasi Web. Website ini berisi resep-resep makanan dan minuman yang dapat Anda coba di rumah.
           </p>
-          <div class="footer__socials">
-            <h4 class="footer__socials__title">Follow us</h4>
-            <ol class="footer__socials__list">
-              <li>
-                <a href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook">
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
-                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-                  </svg>
-                </a>
-              </li>
-            </ol>
-          </div>
         </div>
         <div class="footer__col2">
           <h3 class="footer__text__title">
@@ -158,54 +110,57 @@
           </h3>
           <ol class="footer__text">
             <li>
-              <a href="/index.html">Home</a>
+              <a href="../index.php">Home</a>
             </li>
             <li>
-              <a href="./menu.html">Menu</a>
+              <a href="./resep.php">Resep</a>
             </li>
             <li>
-              <a href="./booking.html">Book Table</a>
-            </li>
-            <li>
-              <a href="./about.html">About Us</a>
-            </li>
-            <li>
-              <a href="./contact.html">contact Us</a>
-            </li>
-            <li>
-              <a href="#">Privacy Policy</a>
+              <a href="./favorit.php">Favorit</a>
             </li>
           </ol>
         </div>
         <div class="footer__col3">
           <h3 class="footer__text__title">
-            Support
+            Anggota
           </h3>
           <ol class="footer__text">
             <li>
-              <a href="#">Contact</a>
+              <a href="#">Arya Yudha Kusuma P</a>
             </li>
             <li>
-              <a href="#">Support Center</a>
+              <a href="#">Meisha Putradewan</a>
             </li>
             <li>
-              <a href="#">Feedback</a>
+              <a href="#">Muhammad Andra Dzaki</a>
+            </li>
+            <li>
+              <a href="#">Fauzi Mahardika K</a>
+            </li>
+            <li>
+              <a href="#">Urdha Egha Kirana</a>
             </li>
           </ol>
         </div>
         <div class="footer__col4">
           <h3 class="footer__text__title">
-            Contact
+            NIM
           </h3>
           <ol class="footer__text">
             <li>
-              <a href="#">+880123</a>
+              <a href="#">225150701111015</a>
             </li>
             <li>
-              <a href="#">webcifar@gmail.com</a>
+              <a href="#">225150700111024</a>
             </li>
             <li>
-              <a href="#">GEC Circle, Chittagong, Bangladesh</a>
+              <a href="#">225150701111003</a>
+            </li>
+            <li>
+              <a href="#">225150707111071</a>
+            </li>
+            <li>
+              <a href="#">225150701111007</a>
             </li>
           </ol>
         </div>
@@ -215,7 +170,7 @@
   <div id="copyright">
     <div class="container">
       <p class="copyright__text">
-        © copyright 2021 Shaif’s Cuisine | All rights reserved
+        © Kelompok 3 Pemrograman Aplikasi Web TI-C 2023
       </p>
     </div>
   </div>

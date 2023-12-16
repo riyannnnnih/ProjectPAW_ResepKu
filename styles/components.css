@@ -255,6 +255,8 @@ li.dropdown {
 	display: flex;
 	flex-direction: column;
 	background-color: var(--lightGreen-1);
+	max-width: 350px;
+	max-height: 350px;
 	padding: 0.5rem;
 	border-radius: 8px;
 	gap: 0.5rem;
@@ -301,6 +303,8 @@ li.dropdown {
 	.dishGrid__wrapper {
 		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 		gap: 3rem;
+		max-width: 350px;
+		max-height: 350px;
 	}
 
 	.dishGrid__item {
@@ -337,7 +341,7 @@ footer {
 }
 
 .footer__logo {
-	width: 150px;
+	width: auto;
 	margin-bottom: 2rem;
 }
 
