@@ -1,6 +1,6 @@
 <?php
 require_once '../../connection.php';
-require_once '../model/m_edit.php';
+require_once '../model/m_editResep.php';
 
 $modelEdit = new ModelEdit($db);
 
@@ -29,7 +29,6 @@ if (isset($_POST["submit"])) {
             @$filename = $_FILES["file"]["name"];
             @$tmpName = $_FILES["file"]["tmp_name"];
             $newfilename = uniqid() . "-" . $filename;
-            move_uploaded_file($tmpName, '../../images/' . $newfilename);
         } else {
             $newfilename = $gambar;
         }

@@ -10,6 +10,10 @@ h1 {
   margin: 0;
 }
 
+.formContainer h2 {
+  margin-bottom: 10px;
+}
+
 #namaResep {
   font-size: 2em;
   border: none;
@@ -105,6 +109,7 @@ label {
   height: 30vh;
   font-weight: lighter;
   font-size: medium;
+
 }
 
 #submitResep {
@@ -117,7 +122,7 @@ label {
   cursor: pointer;
   background-color: green;
   font-weight: bold;
-  margin-top: 10px;
+  margin-left: 10px;
 }
 
 
@@ -146,4 +151,11 @@ label {
 #back img {
   width: 50px;
   height: 50px;
+}
+
+#btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

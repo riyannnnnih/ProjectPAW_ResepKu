@@ -45,9 +45,29 @@ class ModelResep
     return $row['total'];
   }
 
+  public function countAllFavo($id_pengguna)
+  {
+    $query = "SELECT COUNT(*) as total FROM Favorit WHERE Id_pengguna = $id_pengguna";
+    $result = $this->db->query($query);
+    $row = $result->fetch_assoc();
+    return $row['total'];
+  }
   public function selectResepWithPagination($limit, $offset)
   {
     $query = "SELECT * FROM RESEP R, PENGGUNA P WHERE R.Id_pengguna = P.Id_pengguna  GROUP BY Id_resep LIMIT $limit OFFSET $offset";
+    $result = $this->db->query($query);
+
+    $resepList = [];
+    while ($row = $result->fetch_object()) {
+      $resepList[] = $row;
+    }
+
+    return $resepList;
+  }
+
+  public function selectFavoWithPagination($id_pengguna, $limit, $offset)
+  {
+    $query = "SELECT * FROM RESEP R, PENGGUNA P, FAVORIT F WHERE F.Id_pengguna = $id_pengguna AND R.Id_resep = F.Id_resep GROUP BY R.Id_resep LIMIT $limit OFFSET $offset";
     $result = $this->db->query($query);
 
     $resepList = [];
