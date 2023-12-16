@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
   $judul = $_POST['judulResep'];
   $bahan = $_POST['bahanResep'];
   $langkah = $_POST['langkahResep'];
-  // $id_pengguna = $_SESSION['id_pengguna'];
+  $id_pengguna = $_SESSION['id_pengguna'];
 
   if ($_FILES['image']['error'] === 4) {
     echo "<script> alert('Image tak ditemukan');
@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
 
       move_uploaded_file($tmpName, '../../images/' . $uniqImageName);
 
-      $modelObj->insertResep($judul, $bahan, $langkah, 01, $uniqImageName);
+      $modelObj->insertResep($judul, $bahan, $langkah, $id_pengguna, $uniqImageName);
 
       echo "<script> alert('Berhasil Menambahkan');
       document.location.href = '../view/v_resepList.php';
