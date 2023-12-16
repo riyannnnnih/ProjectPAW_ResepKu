@@ -48,7 +48,7 @@
             <span class="text-d">350 </span><span class="text-e">Pengikut</span>
           </div>
         </div>
-        <div class="wrapper-4"><a href="profilPublik.php"><span class="text-f">Edit Profil</span></div></a>
+        <div class="wrapper-4"><a href="v_editprofile.php"><span class="text-f">Edit Profil</span></div></a>
       </div>
       <div class="img-4"></div>
       <span class="text-10">Belum ada aktivitas memasak</span
