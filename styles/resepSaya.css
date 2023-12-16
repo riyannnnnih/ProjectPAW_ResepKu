@@ -638,13 +638,17 @@
     width: 756px;
     height: 19px;
     top: 50%;
-    left: 50%;
-    background: #ededed;
+    /* left: 50%; */
+        left: 35%;
+
+    background: #fff;
     transform: translate(-50%, 105.26%);
     z-index: 29;
     border-radius: 3px;
   }
   .group-3 {
+    
+    top: 50%;
     position: relative;
     width: 112px;
     height: 2px;
