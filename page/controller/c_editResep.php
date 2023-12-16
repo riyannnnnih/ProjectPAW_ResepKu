@@ -1,6 +1,6 @@
 <?php
 require_once '../../connection.php';
-require_once '../model/m_edit.php';
+require_once '../model/m_editResep.php';
 
 $modelEdit = new ModelEdit($db);
 
