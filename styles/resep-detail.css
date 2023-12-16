@@ -61,3 +61,30 @@ body {
   font-weight: lighter;
   margin-top: -10px;
 }
+
+#nama-fave {
+  display: flex;
+  flex-direction: row;
+
+}
+
+#nama-fave img {
+  width: 20%;
+  height: auto;
+}
+
+#favorit-btn {
+  outline: none;
+  border: none;
+  margin: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#favorit-btn p {
+  margin: 0;
+}
+
+#nama-tgl {
+  width: 100%;
+}

@@ -8,6 +8,7 @@
   <title>Tambah Resep</title>
   <link rel="stylesheet" href="../../styles/style.css">
   <link rel="stylesheet" href="../../styles/drag.css">
+  <link rel="stylesheet" href="../../styles/popup.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
@@ -40,12 +41,23 @@
           <h2>Langkah - Langkah</h2>
           <textarea name="langkahResep" id="langkahResep" class="inputResep" placeholder="Langkah Resep..." required></textarea>
         </div>
-        <input type="submit" name="submit" id="submitResep">
+        <div class="container">
+          <button type="button" class="btn" onclick="openPopUp()">Buat</button>
+          <div class="popup" id="popup">
+            <img src="../../asset/upload-logo.png">
+            <h2>TEST</h2>
+            <div id="btn-container">
+              <input type="button" class="btn" onclick="closePopUp()" value="Batal" id="batal-btn"></input>
+              <input type="submit" name="submit" id="submitResep">
+            </div>
+          </div>
+        </div>
         </form>
       </div>
     </div>
   </div>
   <script src="../../script/drag.js"></script>
+  <script src="../../script/popup.js"></script>
 </body>
 
 </html>
