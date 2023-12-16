@@ -35,16 +35,16 @@ if (isset($_POST["submit"])) {
         $modelEdit->editResep($id_Resep, $id_Pengguna,$judul,$bahan,$langkah,$tmpName,$newfilename);
         echo "
         <script> alert('Berhasil Mengupdate');
-          document.location.href = 'v_resepku.php';
+          document.location.href = 'v_resepsaya.php';
           </script>";
 
     } else if ($_POST["submit"] == "delete") {
         $modelEdit->deleteResep($id_Resep, $id_Pengguna);
         echo "
                 <script> alert('Berhasil Menghapus');
-                       document.location.href = 'v_resepku.php';
+                       document.location.href = 'v_resepsaya.php';
                 </script>";
     } else {
-        header("Location:v_resepku.php");
+        header("Location:v_resepsaya.php");
     }
 }

@@ -4,7 +4,7 @@ require_once '../../connection.php';
 
 // Check if the request is a POST request
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-  // Assuming you have session data available
+
   session_start();
 
   // Sanitize and validate the input
@@ -14,11 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
   if ($id_resep > 0) {
     $modelObj = new ModelFavo($db);
 
-    // Assuming you have session data available
-    // $id_pengguna = $_SESSION['id_pengguna'];
+    $id_pengguna = $_SESSION['id_pengguna'];
 
     // Call the insertFavo method from your model
-    $modelObj->insertFavo(1, $id_resep);
+    $modelObj->insertFavo($id_pengguna, $id_resep);
 
     // Return a response if needed
     $response = ['status' => 'success', 'message' => 'Favorite added successfully'];
