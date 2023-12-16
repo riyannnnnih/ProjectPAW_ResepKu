@@ -8,9 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
   <title>Sign In</title>
-  <link rel="stylesheet" href="../../styles/reset.css">
-  <link rel="stylesheet" href="../../styles/globalStyles.css">
-  <link rel="stylesheet" href="../../styles/components.css">
+  <link rel="stylesheet" href="../styles/reset.css">
+  <link rel="stylesheet" href="../styles/globalStyles.css">
+  <link rel="stylesheet" href="../styles/components.css">
   <!-- aos library css  -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
@@ -20,7 +20,7 @@
   <div class="nav">
     <div class="container">
       <div class="nav__wrapper">
-        <a href="../index.php" class="logo">
+        <a href="index.php" class="logo">
           <h1>ResepKu</h1>
         </a>
         <nav>
@@ -40,7 +40,7 @@
               </svg>
             </div>
             <div class="nav__list__wrapper">
-              <li><a class="nav__link" href="./index.php">Home</a></li>
+              <li><a class="nav__link" href="index.php">Home</a></li>
               <li><a class="nav__link" href="./resep.php">Resep</a></li>
               <li><a class="nav__link" href="favorit.php">Favorit</a></li>
               <?php if (isset($_SESSION['id_pengguna'])) {
@@ -48,11 +48,11 @@
                 <a href='#' onclick='myFunction()' class='dropbtn'>More</a>
                 <div id='myDropdown' class='dropdown-content'>
                   <a href='#'>Upload Resep</a>
-                  <a href='../logout.php'>Log Out</a>
+                  <a href='logout.php'>Log Out</a>
                 </div>
               </li>";
               } else {
-                echo "<li><a href='./v_login.php' class='btn primary-btn'>Login</a></li>";
+                echo "<li><a href='v_login.php' class='btn primary-btn'>Login</a></li>";
               } ?>
             </div>
           </ol>
@@ -61,21 +61,42 @@
     </div>
   </div>
   <!-- End Nav Section -->
-  <!-- Sign In Section -->
+  <!-- Sign Up Section -->
   <section id="form" data-aos="fade-up">
     <div class="container">
-      <h3 class="form__title">Sign In</h3>
+      <h3 class="form__title">Sign Up</h3>
       <div class="form_login">
-        <form action="../index.php" method="post">
+        <form action="index.php" method="post" enctype="multipart/form-data">
+          <div class="form__group form__group__full">
+            <label for="username">Username</label>
+            <input type="text" name="regUsername" id="username" placeholder="Enter your username" required>
+          </div>
           <div class="form__group form__group__full">
             <label for="email">Email</label>
-            <input type="email" name="loginEmail" id="email" placeholder="Enter your email" required>
+            <input type="email" name="regEmail" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form__group form__group__full">
+            <label for="foto">Profile Picture</label>
+            <input class="btn primary-btn" type="file" name="foto" id="foto" placeholder="Upload your profile picture">
           </div>
           <div class="form__group form__group__full">
             <label for="password">Password</label>
-            <input type="password" name="loginPassword" id="password" placeholder="Enter your password" required>
+            <input type="password" name="regPassword" id="password" placeholder="Enter your password" required>
           </div>
-          <button type="submit" class="btn primary-btn">Sign In</button>
+          <?php
+          if (isset($_SESSION['error_password'])) {
+            if ($_SESSION['error_password']) {
+              echo "<h1>Password sudah terdaftar</h1>";
+              session_destroy();
+            } else if ($_SESSION['error_email']) {
+              echo "<h1>Email telah terdaftar</h1>";
+              session_destroy();
+            } else if ($_SESSION['error_username']) {
+              echo "<h1>Username sudah terdaftar</h1>";
+              session_destroy();
+            }
+          } ?>
+          <button type="submit" class="btn primary-btn">Sign Up</button>
           <?php
           if (isset($_SESSION['error_pass'])) {
             if ($_SESSION['error_pass']) {
@@ -86,12 +107,12 @@
               session_destroy();
             }
           } ?>
-          <p style="margin-top: .5rem;">Belum punya akun? <a href="./v_reg.php">Sign Up</a></p>
+          <p style="margin-top: .5rem;">Sudah punya akun? <a href="./v_login.php">Sign In</a></p>
         </form>
       </div>
     </div>
   </section>
-  <!-- End Sign In Section -->
+  <!-- End Sign Up Section -->
   <!-- Footer -->
   <footer>
     <div class="container">
@@ -110,7 +131,7 @@
           </h3>
           <ol class="footer__text">
             <li>
-              <a href="../index.php">Home</a>
+              <a href="index.php">Home</a>
             </li>
             <li>
               <a href="./resep.php">Resep</a>
@@ -179,7 +200,7 @@
   <!-- aos scripts -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <!-- custom scripts -->
-  <script src="../../script/main.js"></script>
+  <script src="../script/main.js"></script>
   <script>
     /* When the user clicks on the button,
     toggle between hiding and showing the dropdown content */

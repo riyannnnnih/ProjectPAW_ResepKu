@@ -7,13 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
   <title>ResepKu</title>
-  <link rel="stylesheet" href="../../styles/reset.css">
-  <link rel="stylesheet" href="../../styles/globalStyles.css">
-  <link rel="stylesheet" href="../../styles/components.css">
+  <link rel="stylesheet" href="../styles/reset.css">
+  <link rel="stylesheet" href="../styles/globalStyles.css">
+  <link rel="stylesheet" href="../styles/components.css">
   <!-- aos library css  -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <!-- Add your custom css -->
-  <link rel="stylesheet" href="../../styles/home.css">
+  <link rel="stylesheet" href="../styles/home.css">
 </head>
 
 <body>
@@ -21,7 +21,7 @@
   <div class="nav">
     <div class="container">
       <div class="nav__wrapper">
-        <a href="../index.php" class="logo">
+        <a href="index.php" class="logo">
           <h1>ResepKu</h1>
         </a>
         <nav>
@@ -41,7 +41,7 @@
               </svg>
             </div>
             <div class="nav__list__wrapper">
-              <li><a class="nav__link" href="../index.php">Home</a></li>
+              <li><a class="nav__link" href="index.php">Home</a></li>
               <li><a class="nav__link" href="resep.php">Resep</a></li>
               <li><a class="nav__link" href="favorit.php">Favorit</a></li>
               <?php if (isset($_SESSION['id_pengguna'])) {
@@ -49,11 +49,11 @@
                 <a href='#' onclick='myFunction()' class='dropbtn'>More</a>
                 <div id='myDropdown' class='dropdown-content'>
                   <a href='#'>Upload Resep</a>
-                  <a href='../logout.php'>Log Out</a>
+                  <a href='logout.php'>Log Out</a>
                 </div>
               </li>";
               } else {
-                echo "<li><a href='./v_login.php' class='btn primary-btn'>Login</a></li>";
+                echo "<li><a href='v_login.php' class='btn primary-btn'>Login</a></li>";
               } ?>
             </div>
           </ul>
@@ -78,7 +78,7 @@
               if (isset($_SESSION['id_pengguna'])) {
                 echo "<a href='./upload.php' class='btn'>Upload Resep</a>";
               } else {
-                echo "<a href='./v_login.php' class='btn'>Upload Resep</a>";
+                echo "<a href='v_login.php' class='btn'>Upload Resep</a>";
               }
               ?>
             </div>
@@ -86,7 +86,7 @@
         </div>
         <div class="hero__right" data-aos="fade-right">
           <div class="hero__imgWrapper">
-            <img src="../../images/heroImg.png">
+            <img src="../images/heroImg.png">
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@
     foreach ($resep as $item) {
       echo '<div class="dishGrid__item">';
       echo '<div class="dishGrid__item__img">';
-      echo '<img src="../../images/' . $item['image'] . '" alt="food img">';
+      echo '<img src="../images/' . $item['image'] . '" alt="food img">';
       echo '</div>';
       echo '<div class="dishGrid__item__info">';
       echo '<h3 class="dishGrid__item__title">' . $item['Judul'] . '</h3>';
@@ -137,7 +137,7 @@
           </h3>
           <ol class="footer__text">
             <li>
-              <a href="../index.php">Home</a>
+              <a href="index.php">Home</a>
             </li>
             <li>
               <a href="./resep.php">Resep</a>
@@ -206,7 +206,7 @@
   <!-- aos script -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <!-- custom script -->
-  <script src="../../script/main.js"></script>
+  <script src="../script/main.js"></script>
   <script>
     /* When the user clicks on the button,
     toggle between hiding and showing the dropdown content */
